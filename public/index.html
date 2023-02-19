@@ -1,49 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./chat.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Webchat</title>
 </head>
-
 <body>
-    <header>
-        <div>
-            <img src="./blank-profile.png" alt="Usuário" />
-            <span>Nome</span>
-        </div>
-    </header>
-    <section>
-        <div class="user">
-            <p>Conteudo</p>
-        </div>
-        <div class="other">
-            <p>Conteudo</p>
-        </div>
-        <div class="user">
-            <p>Conteudo</p>
-        </div>
-        <div class="other">
-            <p>Conteudo</p>
-        </div>
-        <div class="user">
-            <p>Conteudo</p>
-        </div>
-    </section>
-    <footer>
-        <input type="text" name="message" />
-        <button type="submit">
-            <img src="./send.png" alt="Enviar" />
-        </button>
-    </footer>
+    <form action="/chat" method="post">
+        <label for="user">Usuário:</label>
+        <input type="text" name="user" id="user">
+        <label for="room">Sala de chat:</label>
+        <select name="room" id="room">
+            <option value="series">Séries</option>
+            <option value="films">Filmes</option>
+            <option value="games">Jogos</option>
+        </select>
+        <input type="submit" value="Entrar na sala">
+    </form>
 </body>
-<script src="/socket.io/socket.io.js"></script>
-<script src="chat.js"></script>
-
 </html>
