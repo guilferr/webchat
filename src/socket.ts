@@ -1,7 +1,11 @@
-import { io } from "./http";
+import { io, users } from "./http"
 
 io.on('connection', (socket) => {
-    console.log('Um usuário se conectou!')
+    const userWithoutId = users.find((user) => user.id === undefined)
+    if (userWithoutId) {
+        userWithoutId.id = socket.id
+    }
+    console.log(users)
     socket.on('disconnect', () => {
         console.log('Usuário desconectado!')
     })
