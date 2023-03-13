@@ -21,7 +21,7 @@ inputMessage.addEventListener("keypress", (event) => {
     }
 })
 
-buttonMessage.addEventListener("click", (event) => {
+buttonMessage.addEventListener("click", () => {
     const message = inputMessage.value
     const data = {
         message,

@@ -1,4 +1,5 @@
-import { io, users } from "./http"
+import { io, messages, users } from "./http"
+import { Message } from "./interfaces/message"
 
 io.on('connection', (socket) => {
     const userWithoutId = users.find((user) => user.id === undefined)
@@ -18,6 +19,17 @@ io.on('connection', (socket) => {
         userWithoutId.id = socket.id
         socket.join(userWithoutId.room)
     }
+
+    socket.on("message", data => {
+        const message: Message = {
+            user: data.user,
+            room: data.room,
+            text: data.message,
+            createdAt: new Date()
+        }
+
+        messages.push(message)
+    })
 
     console.log(users)
 })
