@@ -31,7 +31,8 @@ app.post('/chat', (req: express.Request, res: express.Response) => {
     res.render('chat', {
         user: req.body.user,
         room: req.body.room,
-        roomFormatted: rooms[req.body.room]
+        roomFormatted: rooms[req.body.room],
+        messages
     })
 })
 

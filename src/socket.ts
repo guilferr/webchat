@@ -29,6 +29,7 @@ io.on('connection', (socket) => {
         }
 
         messages.push(message)
+        io.to(data.room).emit("newMessage", message)
     })
 
     console.log(users)

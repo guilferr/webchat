@@ -3,7 +3,7 @@ const socket = io()
 
 const inputMessage = document.getElementById('message')
 const buttonMessage = document.getElementById('sendMessage')
-const user = document.getElementById('user').textContent
+const user = document.getElementById('user').innerText
 const room = document.getElementById('room').attributes.name.value
 
 inputMessage.addEventListener("keypress", (event) => {
@@ -32,4 +32,8 @@ buttonMessage.addEventListener("click", () => {
     socket.emit("message", data)
 
     inputMessage.value = ""
+})
+
+socket.on("newMessage", () => {
+    window.location.reload()
 })

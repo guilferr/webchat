@@ -16,28 +16,28 @@
     <header>
         <div>
             <img src="./blank-profile.png" alt="Usuário" />
-            <span id="user"><%= user %></span>
+            <span id="user">
+                <%= user %>
+            </span>
         </div>
         <div>
             <span id="room" name="<%= room %>">Sala: <%= roomFormatted %></span>
         </div>
     </header>
     <section>
-        <div class="user">
-            <p>Conteudo</p>
-        </div>
-        <div class="other">
-            <p>Conteudo</p>
-        </div>
-        <div class="user">
-            <p>Conteudo</p>
-        </div>
-        <div class="other">
-            <p>Conteudo</p>
-        </div>
-        <div class="user">
-            <p>Conteudo</p>
-        </div>
+        <% messages.map(message=> {
+            if (message.user === user) {
+            %>
+            <div class="user">
+                <p>
+                    <%= message.text %>
+                </p>
+            </div>
+            <% } else { %>
+                <div class="other">
+                    <%= message.text %>
+                </div>
+                <% } }) %>
     </section>
     <footer>
         <input type="text" name="message" id="message" />
