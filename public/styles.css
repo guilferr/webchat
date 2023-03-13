@@ -15,6 +15,7 @@ body {
 
 header {
     display: flex;
+    justify-content: space-between;
     width: 100vw;
     background-color: #99bbff;
     padding: 1.5rem;

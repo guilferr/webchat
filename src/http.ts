@@ -3,6 +3,7 @@ import express from 'express'
 import http from 'http'
 import path from 'path'
 import { Server } from "socket.io"
+import { rooms } from './interfaces/room'
 import { User } from './interfaces/user'
 const app = express()
 const server = http.createServer(app)
@@ -27,7 +28,8 @@ app.post('/chat', (req: express.Request, res: express.Response) => {
 
     res.render('chat', {
         user: req.body.user,
-        room: req.body.room
+        room: req.body.room,
+        roomFormatted: rooms[req.body.room]
     })
 })
 

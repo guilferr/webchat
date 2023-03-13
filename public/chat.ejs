@@ -16,7 +16,10 @@
     <header>
         <div>
             <img src="./blank-profile.png" alt="Usuário" />
-            <span><%= user %> em <%= room %></span>
+            <span id="user"><%= user %></span>
+        </div>
+        <div>
+            <span id="room" name="<%= room %>">Sala: <%= roomFormatted %></span>
         </div>
     </header>
     <section>
@@ -37,7 +40,7 @@
         </div>
     </section>
     <footer>
-        <input type="text" name="message" />
+        <input type="text" name="message" id="message" />
         <button type="submit">
             <img src="./send.png" alt="Enviar" />
         </button>
