@@ -12,9 +12,11 @@ const users: User[] = []
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(bodyParser.urlencoded({ extended: true }))
+app.set('view engine', 'ejs')
+app.set('views', './public')
 
 app.get('/', (req: express.Request, res: express.Response) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
+    res.render('index')
 })
 
 app.post('/chat', (req: express.Request, res: express.Response) => {
@@ -23,7 +25,10 @@ app.post('/chat', (req: express.Request, res: express.Response) => {
         room: req.body.room
     })
 
-    res.sendFile(path.join(__dirname, '..', 'public', 'chat.html'))
+    res.render('chat', {
+        user: req.body.user,
+        room: req.body.room
+    })
 })
 
 export { server, io, users }
