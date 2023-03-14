@@ -32,5 +32,13 @@ io.on('connection', (socket) => {
         io.to(data.room).emit("newMessage", message)
     })
 
+    socket.on("logout", data => {
+        users.forEach((user, key)=>{
+            if (user.user === data.user && user.room === data.room) {
+                users.splice(key, 1)
+            }
+        })
+    })
+
     console.log(users)
 })

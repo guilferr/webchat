@@ -3,6 +3,7 @@ const socket = io()
 
 const inputMessage = document.getElementById('message')
 const buttonMessage = document.getElementById('sendMessage')
+const buttonLogout = document.getElementById('logout')
 const user = document.getElementById('user').innerText
 const room = document.getElementById('room').attributes.name.value
 
@@ -32,6 +33,16 @@ buttonMessage.addEventListener("click", () => {
     socket.emit("message", data)
 
     inputMessage.value = ""
+})
+
+buttonLogout.addEventListener("click", () => {
+    const data = {
+        user,
+        room
+    }
+
+    socket.emit("logout", data)
+    window.location.assign("/")
 })
 
 socket.on("newMessage", () => {
