@@ -29,13 +29,31 @@
             if (message.user === user) {
             %>
             <div class="user">
+                <span>
+                    <strong>
+                        <%= message.user %>:
+                    </strong>
+                </span>
                 <p>
                     <%= message.text %>
                 </p>
+                <span>
+                    <%= message.createdAt.toLocaleString('pt-BR') %>
+                </span>
             </div>
             <% } else { %>
                 <div class="other">
-                    <%= message.text %>
+                    <span>
+                        <strong>
+                            <%= message.user %>:
+                        </strong>
+                    </span>
+                    <p>
+                        <%= message.text %>
+                    </p>
+                    <span>
+                        <%= message.createdAt.toLocaleString('pt-BR') %>
+                    </span>
                 </div>
                 <% } }) %>
     </section>

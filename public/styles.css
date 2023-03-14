@@ -45,27 +45,41 @@ section {
 .user {
     background-color: #6699ff;
     padding: 0.5rem;
+    padding-bottom: 1rem;
     margin-bottom: 0.5rem;
     border-radius: 1rem;
     max-width: 35vw;
 }
 
-.user p {
+.user p,
+.user span {
     color: #f2f2f2;
     font-size: 0.9rem;
+}
+
+.user p+span {
+    font-size: 0.6rem;
+    float: right;
 }
 
 .other {
     background-color: #f2f2f2;
     padding: 0.5rem;
+    padding-bottom: 1rem;
     border-radius: 1rem;
     max-width: 35vw;
-    margin: 0rem 1rem 0.5rem auto ;
+    margin: 0rem 1rem 0.5rem auto;
 }
 
-.other p {
+.other p,
+.other span {
     color: #404040;
     font-size: 0.9rem;
+}
+
+.other p+span {
+    font-size: 0.6rem;
+    float: right;
 }
 
 footer {
