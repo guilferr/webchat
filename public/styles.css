@@ -37,6 +37,13 @@ header div span {
     color: #f2f2f2;
 }
 
+header div button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f2f2f2;
+}
+
 section {
     height: 100%;
     padding: 1.5rem;
