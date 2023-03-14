@@ -29,6 +29,7 @@
     </header>
     <section>
         <% messages.map(message=> {
+            if (message.room === room) {
             if (message.user === user) {
             %>
             <div class="user">
@@ -58,7 +59,7 @@
                         <%= message.createdAt.toLocaleString('pt-BR') %>
                     </span>
                 </div>
-                <% } }) %>
+                <% } }}) %>
     </section>
     <footer>
         <input type="text" name="message" id="message" />
